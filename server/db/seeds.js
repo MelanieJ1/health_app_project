@@ -26,6 +26,19 @@ db.medicalData.insertMany([
         "img_url": "https://openi.nlm.nih.gov/imgs/512/268/5034021/PMC5034021_JoU-2016-0027-g002.png?keywords="
     },
 
+    {
+        "title": "Blood Test Report",
+        "patient_name": "Jane Smith",
+        "white_cell_count": "5.00 x 10^9L",
+    },
+
+    {
+        "title": "Liver Ultrasound Report",
+        "patient_name": "Jane Smith",
+        "report": "Liver size is regular and shows no abnormalities."
+
+    }
+
 
 
 ])
