@@ -8,11 +8,12 @@ const MedDataCard = ({medicalData, removeMedicalData}) => {
     // }
         return (
         <>
-            {/* <h1>{medicalData.name}</h1>
-            <p>Image: {medicalData.img_url}</p> */}
+
+            <h1>{MedDataCard.name}</h1>
+            <p>Image: {MedDataCard.img_url}</p>
             {/* <button onClick={handleDelete}> 🗑 </button> */}
 
-            <hr></hr>
+            
         </>
     )
 }

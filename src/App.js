@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import MedDataCard from './components/MedDataCard';
 import MedDataGrid from './components/MedDataGrid';
 import { getMedData } from './components/MedDataService';
+import EatHealthyContainer from './containers/EatHealthyContainer';
 
 
 
@@ -25,11 +26,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hey</h1>
+      
         <>
       
-      <MedDataCard medicalData={medicalData} />
-
+    <div>
+      <h1>Healthy Eating</h1>
+     <EatHealthyContainer />
+    </div>
         </>
       </header>
     </div>
