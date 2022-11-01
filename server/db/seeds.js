@@ -3,7 +3,7 @@ import { dblClick } from "@testing-library/user-event/dist/click"
 use health_data
 db.dropDatabase()
 
-db.imageCollection.insertMany{[
+db.scans.insertMany([
     {
         "name": "MRI Brain Scan ",
         "img_url": "https://openi.nlm.nih.gov/imgs/512/212/4837876/PMC4837876_CMJ-128-407-g001.png?keywords=subdural%20effusion,hematomas,subdural%20hematoma"
@@ -28,4 +28,4 @@ db.imageCollection.insertMany{[
 
 
 
-]}
+])

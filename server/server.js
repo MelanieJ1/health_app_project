@@ -12,9 +12,9 @@ const createRouter = require('./helpers/create_router.js')
 MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
   .then((client) => {
     const db = client.db('health_data')
-    const imageCollection = db.collection('medicalData')
-    // const imageRouter = createRouter(imageCollection)
-    // app.use('', imageRouter)
+    const healthCollection = db.collection('medicalData')
+    const healthRouter = createRouter(healthCollection)
+    app.use('/api/medicalData', healthRouter);
   })
   .catch(console.err)
 
