@@ -3,7 +3,7 @@ const ItemDetail = ({selectedItem}) => {
     return (
         
         <div>
-            <h3>{selectedItem.region}</h3>
+            <h3>{selectedItem.Title}</h3>
             <p>{selectedItem.Url}</p>
         
         </div>
@@ -11,3 +11,5 @@ const ItemDetail = ({selectedItem}) => {
   }
   
   export default ItemDetail;
+
+  

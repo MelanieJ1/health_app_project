@@ -8,7 +8,7 @@ const ItemSelector = ({items, onItemSelected}) => {
     }
     
     const itemOptions = items.map((item, index) => {
-      return <option value={index} key={index}>{item.Resources}</option>
+      return <option value={index} key={index}>{item.Title}</option>
     })
 
     return (

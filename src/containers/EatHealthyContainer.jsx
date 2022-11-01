@@ -14,7 +14,7 @@ const EatHealthyContainer = () => {
     const getItems = function(){
         fetch('https://health.gov/myhealthfinder/api/v3/topicsearch.json?TopicId=30539')
         .then(res => res.json())
-        .then(items => setItems(items))
+        .then(data => setItems(data.Result.Resources.Resource[0].RelatedItems.RelatedItem));
     }
 
     

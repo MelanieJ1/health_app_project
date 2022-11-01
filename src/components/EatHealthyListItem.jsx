@@ -7,7 +7,7 @@ function ListItem({ item, onItemClick }) {
     };
   
   
-    return <li onClick={handleClick}>{item.name}</li>;
+    return <li onClick={handleClick}>{item.Title}</li>;
   }
   
   export default ListItem;
