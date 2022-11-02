@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import NavBar from './components/NavBar';
 import Advice from "./components/Advice"; 
+import Meds from './components/Meds';
 
 
 
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         {/* <Route path="/" element={< Home />} /> */}
         <Route path="/advice" element={< Advice />} />
+        <Route path="/medication" element={< Meds />} />
 
       </Routes>
     </Router>
