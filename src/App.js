@@ -1,12 +1,16 @@
 
-import './App.css';
-
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
+import NavBar from './components/NavBar';
+import Advice from "./components/Advice"; 
+
+
 
 import MedDataCard from './components/MedDataCard';
 import MedDataGrid from './components/MedDataGrid';
 import { getMedData } from './components/MedDataService';
 import EatHealthyContainer from './containers/EatHealthyContainer';
+
 
 
 
@@ -24,19 +28,36 @@ function App() {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <>
+    <Router>
+    <NavBar />
+      <Routes>
+        {/* <Route path="/" element={< Home />} /> */}
+        <Route path="/advice" element={< Advice />} />
+
+      </Routes>
+    </Router>
+
+
+    </>
+
+
+    // {/* <div className="App">
+    //   <header className="App-header">
       
-        <>
+    //     <>
       
-    <div>
-      <h1>Healthy Eating</h1>
-     <EatHealthyContainer />
-    </div>
-        </>
-      </header>
-    </div>
+    // <div>
+    //   <h1>Healthy Eating</h1>
+    //  <EatHealthyContainer />
+    // </div>
+    //     </>
+    //   </header>
+    // </div> */}
+  
   );
+
+    
 }
 
 export default App;

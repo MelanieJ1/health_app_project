@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ItemDetail from '../components/EatHealthyDetail';
 import EatHealthyList from '../components/EatHealthyList';
 import ItemSelector from '../components/EatHealthySelect';
+import Advice from '../components/Advice';
 
 const EatHealthyContainer = () => {
     const [item, setItems] = useState([]);

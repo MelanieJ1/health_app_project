@@ -1,4 +1,3 @@
-import { dblClick } from "@testing-library/user-event/dist/click"
 
 use health_data
 db.dropDatabase()
@@ -6,20 +5,20 @@ db.dropDatabase()
 db.medicalData.insertMany([
     {
         "title": "MRI Brain Scan ",
-        "patient_name"
+        "patient_name": "Jane Smith",
         "img_url": "https://openi.nlm.nih.gov/imgs/512/212/4837876/PMC4837876_CMJ-128-407-g001.png?keywords=subdural%20effusion,hematomas,subdural%20hematoma"
     },
 
     {
         "title": "Hand X-ray",
-        "patient_name":,
+        "patient_name": "Jane Smith",
         "img_url": "https://openi.nlm.nih.gov/imgs/512/397/5117157/PMC5117157_10.1177_2324709616677064-fig2.png?keywords=deformity"
 
     },
 
     {
         "title": "Ultrasound - Liver",
-        "patient_name":,
+        "patient_name": "Jane Smith",
         "img_url": "https://openi.nlm.nih.gov/imgs/512/293/4900112/PMC4900112_gr1.png?keywords=lipomatous%20neoplasm,angiomyolipoma"
 
     },
@@ -58,7 +57,7 @@ db.medicalData.insertMany([
         "hdl_cholesterol": "1.5 mmol/L",
         "ldl_cholesterol": "3.0 mmol/L",
 
-    }
+    },
 
     {
         "title":"Blood Test Report - Metabolic Panel",
@@ -71,7 +70,7 @@ db.medicalData.insertMany([
         "alkaline_phosphatase": "50 U/L",
 
 
-    }
+    },
 
 
 
@@ -80,25 +79,25 @@ db.medicalData.insertMany([
         "patient_name": "Jane Smith",
         "report": "Liver size is regular and shows no abnormalities."
 
-    }
+    },
 
     {
         "title": "Spleen Utrasound Report",
         "patient_name": "Jane Smith",
-        "report":,
-    }
+        "report":"",
+    },
 
     {
         "title": "Hand X-ray Report",
         "patient_name": "Jane Smith",
-        "report":,
-    }
+        "report":"",
+    },
 
     {
         "title": "MRI Brain Scan Report",
         "patient_name": "Jane Smith",
-        "report":,
-    }
+        "report":"",
+    },
 
 
 
