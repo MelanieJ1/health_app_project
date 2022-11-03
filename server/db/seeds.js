@@ -2,7 +2,7 @@
 use health_data
 db.dropDatabase()
 
-db.medicalData.insertMany([
+db.medicalImages.insertMany([
     {
         "title": "MRI Brain Scan ",
         "patient_name": "Jane Smith",
@@ -27,6 +27,11 @@ db.medicalData.insertMany([
         "title": "Ultrasound - Spleen",
         "img_url": "https://openi.nlm.nih.gov/imgs/512/268/5034021/PMC5034021_JoU-2016-0027-g002.png?keywords="
     },
+
+])
+
+db.medicalResults.insertMany([
+
 
     {
         "title": "Blood Test Report",
@@ -99,6 +104,15 @@ db.medicalData.insertMany([
         "report":"",
     },
 
+])
+
+db.medications.insertMany([
+
+    {
+        
+    }
 
 
 ])
+
+
