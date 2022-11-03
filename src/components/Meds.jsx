@@ -1,9 +1,10 @@
 import React from 'react';
-import '../App.css';
+import MedsForm from './MedsForm';
+import '../App.js';
 
 
 
-const Meds = () => {
+const Meds = (addNewItem) => {
     return (
 
     <div className="App">
@@ -11,8 +12,11 @@ const Meds = () => {
       <>  
       
      <div>
-      
+    
+        <MedsForm addNewItem={addNewItem} />
     </div>
+      
+
         </>
       </header>
     </div>

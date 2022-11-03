@@ -4,26 +4,28 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from './components/NavBar';
 import Advice from "./components/Advice"; 
 import Meds from './components/Meds';
-
-
-
-import MedDataCard from './components/MedDataCard';
-import MedDataGrid from './components/MedDataGrid';
-import { getMedData } from './components/MedDataService';
-import EatHealthyContainer from './containers/EatHealthyContainer';
+import HealthDataService from './containers/HealthService';
+// import MedsForm from './components/MedsForm';
+// import MedDataCard from './components/MedDataCard';
+// import MedDataGrid from './components/MedDataGrid';
+// import { getMedData } from './components/MedDataService';
 
 
 
 
 function App() {
-  const [medicalData, setMedicalData] = useState([]);
-  useEffect(()=>{
-    getMedData()
-    .then((data)=>{
-      console.log(data);
-      setMedicalData(data)
-    })
-  },[]);
+  const [item, setItems] = useState([]);
+  
+
+  useEffect(() => {
+    HealthDataService.getHealthData().then((items) => setItems(items))
+  }, [])
+
+  const addNewItem = (item) => {
+    HealthDataService.addNewItem(item).then((newItem) =>
+      setItems([...item, newItem])
+    )
+  }
 
   
 
@@ -44,18 +46,7 @@ function App() {
     </>
 
 
-    // {/* <div className="App">
-    //   <header className="App-header">
-      
-    //     <>
-      
-    // <div>
-    //   <h1>Healthy Eating</h1>
-    //  <EatHealthyContainer />
-    // </div>
-    //     </>
-    //   </header>
-    // </div> */}
+    
   
   );
 
