@@ -1,5 +1,5 @@
 
-const baseURL = 'http://localhost:9000/api/health_data/'
+const baseURL = 'http://localhost:9000/api/medications'
 
 
 
@@ -8,7 +8,7 @@ const HealthDataService = {
     return fetch(baseURL).then((res) => res.json())
   },
 
-  addNewItem(newItem) {
+  addMedication(newItem) {
     return fetch(baseURL, {
       method: 'POST',
       body: JSON.stringify(newItem),

@@ -1,31 +1,36 @@
 import { useState } from "react"
+// import HealthDataService from './containers/HealthService';
 import '../App.css';
 
-const MedsForm = ({addNewData}) => {
+const MedsForm = ({addMedication}) => {
 
-    const [formData, setFormData] = useState({
-        "Add Medication": null,
-        "Add Supplement": null,
+    const [medicationInput, setMedicationInput] = useState("")
+    const [supplementInput, setSupplementInput] = useState("")
 
-      })
 
-      const onChange = (e) =>  {
-        const NewFormData = Object.assign({}, formData)
-        NewFormData[e.target.name] = e.target.value
-        setFormData(NewFormData)
+      const handleMedictionInput = (e) => {
+        setMedicationInput(e.target.value)
       }
+
+      const handleSupplementInput = (e) => {
+        setSupplementInput(e.target.value)
+      }
+    
 
       const onSubmit = (e) => {
         e.preventDefault()
-        addNewData(formData)
-        setFormData(
-            {
-                "Add Medication": "",
-                "Add Supplement": "",
-        
-            }
+        const newFormData = {
+          "Medication": null,
+          "Supplement": null,
+        }
+        newFormData.Medication = medicationInput
+        newFormData.Supplement = supplementInput
 
-        )
+        addMedication(newFormData)
+        setMedicationInput("")
+        setSupplementInput("")
+
+        
       }
 
       return(
@@ -37,24 +42,24 @@ const MedsForm = ({addNewData}) => {
             <label htmlFor="Medication">Add Medication:</label>
             <br></br>
             <input
-                  onChange={onChange}
+                  onChange={handleMedictionInput}
                   type="text"
                   name="Individual"
                   id="Individual"
                   required
-                  value={formData.Medication}
+                  value={medicationInput}
             />
             <br></br>
 
                         <label htmlFor="Supplements">Add Supplements:</label>
             <br></br>
             <input
-                  onChange={onChange}
+                  onChange={handleSupplementInput}
                   type="text"
                   name="Individual"
                   id="Individual"
                   required
-                  value={formData.Supplements}
+                  value={supplementInput}
             />
 
             <br></br>
@@ -71,4 +76,4 @@ const MedsForm = ({addNewData}) => {
     
         }
 
-    export default MedsForm;
+export default MedsForm;

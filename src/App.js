@@ -5,7 +5,7 @@ import NavBar from './components/NavBar';
 import Advice from "./components/Advice"; 
 import Meds from './components/Meds';
 import HealthDataService from './containers/HealthService';
-// import MedsForm from './components/MedsForm';
+import MedsForm from './components/MedsForm';
 // import MedDataCard from './components/MedDataCard';
 // import MedDataGrid from './components/MedDataGrid';
 // import { getMedData } from './components/MedDataService';
@@ -14,16 +14,18 @@ import HealthDataService from './containers/HealthService';
 
 
 function App() {
-  const [item, setItems] = useState([]);
+  const [items, setItems] = useState([]);
   
 
   useEffect(() => {
     HealthDataService.getHealthData().then((items) => setItems(items))
   }, [])
 
-  const addNewItem = (item) => {
-    HealthDataService.addNewItem(item).then((newItem) =>
-      setItems([...item, newItem])
+
+
+  const addMedication = (item) => {
+    HealthDataService.addMedication(item).then((newItem) =>
+      setItems([...items, newItem])
     )
   }
 
@@ -37,7 +39,8 @@ function App() {
       <Routes>
         {/* <Route path="/" element={< Home />} /> */}
         <Route path="/advice" element={< Advice />} />
-        <Route path="/medication" element={< Meds />} />
+        <Route path="/medication" element={< Meds addMedication={addMedication} />} />
+        
 
       </Routes>
     </Router>

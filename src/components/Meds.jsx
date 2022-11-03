@@ -4,7 +4,7 @@ import '../App.js';
 
 
 
-const Meds = (addNewItem) => {
+const Meds = ({addMedication}) => {
     return (
 
     <div className="App">
@@ -13,7 +13,7 @@ const Meds = (addNewItem) => {
       
      <div>
     
-        <MedsForm addNewItem={addNewItem} />
+        <MedsForm addMedication={addMedication} />
     </div>
       
 
