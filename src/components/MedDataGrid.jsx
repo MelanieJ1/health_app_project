@@ -1,21 +1,23 @@
+import { updateMedication } from "../containers/HealthService";
+import { updatingMedication} from "../App"
 import MedsCard from "./MedDataCard";
 
 
-const MedsGrid = ({medications, removeMedication, updateBooking}) => {
-    const medsList = medications.map(medication => {
+const MedsList = ({medications, updateMedication, deleteMedication}) => {
+    const medsNodes = medications.map(medication => {
         return <MedsCard key={medication._id} medication={medication}  
-        removeMedication={removeMedication} updateBooking={updateBooking}/>
+        updateMedication={updateMedication} deleteMedication={deleteMedication}/>
     });
     
     return (
         <>
-            {medsList}
+            {medsNodes}
         </>
     );
 
 }
 
-export default MedsGrid;
+export default MedsList;
 
 
 

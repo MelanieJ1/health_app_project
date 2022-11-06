@@ -1,14 +1,18 @@
 import { deleteMedication } from "../containers/HealthService";
 
 
-const MedsCard = ({medication, removeMedication, updateMedication }) => {
+const MedsCard = ({medication, deleteMedication, updateMedication }) => {
+
+    const handleDeleteMedication = () => {
+        deleteMedication(medication._id);
+      }
 
     
-    const handleDelete = () => {
-        deleteMedication(medication._id).then(()=>{
-            removeMedication(medication._id);
-        })
-    }
+    // const handleDelete = () => {
+    //     deleteMedication(medication._id).then(()=>{
+    //         removeMedication(medication._id);
+    //     })
+    // }
 
     const toggleActive = () => {
         updateMedication({
@@ -21,10 +25,7 @@ const MedsCard = ({medication, removeMedication, updateMedication }) => {
       }
 
 
-    // const handleDelete = () => {
-    //     deleteMedication(medication._id);
-    //     }
-
+    
 
     return (
         <>
@@ -33,9 +34,9 @@ const MedsCard = ({medication, removeMedication, updateMedication }) => {
             <p>Medication: {medication.medication}</p>
             <p>Supplement: {medication.supplement}</p>
             <p>Date: {medication.date}</p>
-            <button onClick={toggleActive}>{"Active: " + (medication.active ? "Yes" : "No")}</button>
+            <button onClick={toggleActive}>{"Active: " + (medication.active ? "No" : "Yes")}</button>
             <br></br>
-            <button onClick={handleDelete}> <span>❌</span> Delete </button>
+            <button onClick={handleDeleteMedication}> <span>❌</span> Delete </button>
             <hr></hr>
 
         </>

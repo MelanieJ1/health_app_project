@@ -6,13 +6,16 @@ import Advice from "./components/Advice";
 import { getMedications } from './containers/HealthService';
 import { deleteMedication } from './containers/HealthService';
 import { updateMedication } from './containers/HealthService';
-
-
-
-import ReportsList from './components/ReportsList';
-import ResultsService from './containers/ResultsService';
+import Reports from './components/Reports';
+import { getReports } from './containers/ReportsService';
+import ReportsList from '../src/components/ReportsList'
+import DiagnosticList from './components/DiagnosticList';
 import MedsForm from './components/MedsForm';
 import MedsGrid from './components/MedDataGrid';
+import { addMedication } from "../src/containers/HealthService";
+import MedsList from './components/MedDataGrid';
+import HealthService from './containers/HealthService';
+import { getImages } from '../src/containers/DiagnosticService'
 
 
 
@@ -20,23 +23,39 @@ import MedsGrid from './components/MedDataGrid';
 
 function App() {
   const [medications, setMedications] = useState([]);
+  const [reports, setReports] = useState([]);
+  const [images, setImages] = useState([]);
   
 
   useEffect(() => {
-    getMedications().then((allMedications) => setMedications(allMedications))
+    HealthService.getMedications().then(medications => setMedications(medications))
+  }, []);
+
+  useEffect(()=>{
+    getReports().then(reports => setReports(reports))
+  }, []);
+
+  useEffect(()=>{
+    getImages().then(images => setImages(images))
   }, []);
 
   
 
-  const addMedication = (medication) =>{
-    const temp = medications.map(s =>s);
-    temp.push(medication);
-    setMedications(temp);
-  }
+  // const addMedication = (medication) =>{
+  //   const temp = medications.map(s =>s);
+  //   temp.push(medication);
+  //   setMedications(temp);
+  // }
 
-  const updatingMedication = updatedMedication => {
+  const createMedication = newMedication => {
+    HealthService.addMedication(newMedication)
+      .then(savedMedication => setMedications([ ...medications, savedMedication ]));
+  };
+
+
+  const updateMedication = updatedMedication => {
     // req to server to update booking in DB
-    updateMedication(updatedMedication);
+    HealthService.updateMedication(updatedMedication);
 
     // update locally
     const updatedMedicationIndex = medications.findIndex(medication => medication._id === updatedMedication._id);
@@ -55,22 +74,11 @@ function App() {
   //   setMedications(temp);
   // }
 
-  const removeMedication = idToDelete => {
+  const deleteMedication = idToDelete => {
     // req to server to delete booking from DB
-    deleteMedication(idToDelete);
+    HealthService.deleteMedication(idToDelete);
     setMedications(medications.filter(medication => medication._id !== idToDelete));
   }
-
-
-
-
-  
-
-
-
-
-
-  
 
 
   return (
@@ -80,12 +88,16 @@ function App() {
       <Routes>
         {/* <Route path="/" element={< Home />} /> */}
         <Route path="/advice" element={< Advice />} />
-        <Route path="/medications" element={<>< MedsForm addMedication={addMedication} />< MedsGrid medications={medications}  removeMedication={removeMedication}
-          updatingMedication={updatingMedication}
+        <Route path="/medications" element={<>< MedsForm addMedication={createMedication} />< MedsList medications={medications}
+          updateMedication={updateMedication}
+          deleteMedication={deleteMedication}
         />
-        </>} />
-        {/* <Route path="/results" element={< ReportsList items={items} />} /> */}
-        {/* <Route path="/images" element={< DiagnosticList viewImage={viewImage} />} /> */}
+        </>}
+        />
+        <Route path="/supplements" element={< Advice />} />
+        <Route path="/reports" element={< ReportsList reports={reports}/>} />
+        
+        <Route path="/images" element={< DiagnosticList images={images} />} />
 
 
       </Routes>

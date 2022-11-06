@@ -1,10 +1,11 @@
 
 const baseURL = 'http://localhost:9000/api/images'
 
-const DiagnosticService = {
-    getDiagnosticImage() {
+
+    export const getImages= () => {
       return fetch(baseURL).then((res) => res.json())
-    },
+    }
+  
 
 
 

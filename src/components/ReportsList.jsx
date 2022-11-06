@@ -1,40 +1,28 @@
 import React from "react"
-import App from "../App"
-import ResultsService from "../containers/ResultsService";
-
-import getReports from "../containers/ResultsService"
-
-// const ReportsList = items.map((item) =>{
-//     return <ResultsService getReports={getReports} key={item._id} />
-//     });
+import Reports from "./Reports";
+import App from "../App";
+import { getReport } from "../containers/ReportsService";
 
 
-
-    // return(
-
-    //     <div className="App">
-    //     <header className="App-header">
-    //     <>  
-        
-
-    //     <{ReportsList}/>
-        
-      
-          
-    
-        
+const ReportsList = ({reports}) => {
+    const reportsNodes = reports.map(report => {
+      return <Reports key={report._id}
+        report={report}
+      />
+    });
   
-    //     </>
-    //     </header>
-    //     </div>
+    return (
+      <section id="reports">
+        <h2>Reports</h2>
+        <div id="reports-wrapper">
+          {reportsNodes}
+        </div>
+      </section>
+    )
+  };
+
+export default ReportsList;
   
-   
-// });
 
 
-// export default ReportsList;
-
-// const sightingsList = sightings.map((sighting) =>{
-//     return <SightingCard sighting={sighting} key={sighting._id} removeSighting={removeSighting} />
-// });
-
+  

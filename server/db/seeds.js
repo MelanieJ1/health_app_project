@@ -50,25 +50,65 @@ db.medicalResults.insertMany([
         "red_blood_cell_mcv": "82 fL",
         "hemoglobin_mch": "30 pg",
         "glucose_level": "5.0 mmol/L",
+        "total_cholesterol": "NA",
+        "triglycerids": "NA",
+        "hdl_cholesterol": "NA",
+        "ldl_cholesterol": "NA",
+        "alanine_aminotransferase": "NA",
+        "albumin": "NA",
+        "serum_total_protein": "NA",
+        "alkaline_phosphatase": "NA",
     },
 
     {
         "title":"Blood Test Report - Lipid Panel",
-        "patient_name": "Jane Smith",
         "test_date": "12 March 2022",
-        "haemoglobin_level": "130 g/L",
+        "patient_name": "Jane Smith",
+        "white_cell_count": "5.00 x 10^9 /L",
+        "platelets":"300 x 10^9 /L",
+        "neutrophils": "5.0 x 10^9 /L",
+        "lymphocytes": "2.0 x 10^9 /L",
+        "monocytes": "0.5 x 10^9 /L",
+        "eosinohils": "0.02 x 10^9 /L%",
+        "basophils": "0.05 x 10^9 /L",
+        "erythrocyte_sedimentation_rate": "5.0 mm/hr",
+        "red_blood_cell_count": "4.0 x 10^12 /L" ,
+        "haemoglobin_level": "120 g/L",
+        "red_blood_cell_mcv": "82 fL",
+        "hemoglobin_mch": "30 pg",
+        "glucose_level": "5.0 mmol/L",
         "total_cholesterol": "6 mmol/L",
         "triglycerids": "1.80 mmol/L",
         "hdl_cholesterol": "1.5 mmol/L",
         "ldl_cholesterol": "3.0 mmol/L",
+        "alanine_aminotransferase": "NA",
+        "albumin": "NA",
+        "serum_total_protein": "NA",
+        "alkaline_phosphatase": "NA",
 
     },
 
     {
         "title":"Blood Test Report - Metabolic Panel",
-        "patient_name": "Jane Smith",
         "test_date": "10 August 2022",
+        "patient_name": "Jane Smith",
+        "white_cell_count": "5.00 x 10^9 /L",
+        "platelets":"300 x 10^9 /L",
+        "neutrophils": "5.0 x 10^9 /L",
+        "lymphocytes": "2.0 x 10^9 /L",
+        "monocytes": "0.5 x 10^9 /L",
+        "eosinohils": "0.02 x 10^9 /L%",
+        "basophils": "0.05 x 10^9 /L",
+        "erythrocyte_sedimentation_rate": "5.0 mm/hr",
+        "red_blood_cell_count": "4.0 x 10^12 /L" ,
         "haemoglobin_level": "110 g/L",
+        "red_blood_cell_mcv": "82 fL",
+        "hemoglobin_mch": "30 pg",
+        "glucose_level": "5.0 mmol/L",
+        "total_cholesterol": "6 mmol/L",
+        "triglycerids": "NA",
+        "hdl_cholesterol": "NA",
+        "ldl_cholesterol": "NA",
         "alanine_aminotransferase": "28 U/L",
         "albumin": "40 g/L",
         "serum_total_protein": "70 g/L",
@@ -76,8 +116,10 @@ db.medicalResults.insertMany([
 
 
     },
+    
+])
 
-
+db.medicalReports.insertMany([
 
     {
         "title": "Liver Ultrasound Report",
@@ -104,17 +146,22 @@ db.medicalResults.insertMany([
         "report":"",
     },
 
+
+
 ])
 
 db.medications.insertMany([
+    {
+
+    }
+    
+])
+
+db.supplements.insertMany([
 
     {
-        "medication": "Omeprazole",
-        "supplement": "Vitamin C",
-        "date": "2017-01-22"
-    },
-
-
+        
+    }
 ])
 
 
