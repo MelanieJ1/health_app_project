@@ -5,6 +5,8 @@ import NavBar from './components/NavBar';
 import Advice from "./components/Advice"; 
 import { getMedications } from './containers/HealthService';
 import { deleteMedication } from './containers/HealthService';
+import { updateMedication } from './containers/HealthService';
+
 
 
 import ReportsList from './components/ReportsList';
@@ -32,13 +34,31 @@ function App() {
     setMedications(temp);
   }
 
-  const removeMedication = (id) => {
-    const temp = medications.map(s =>s);
-    const indexToDel = temp.map(s => s._id).indexOf(id);
-    console.log(indexToDel);
+  const updatingMedication = updatedMedication => {
+    // req to server to update booking in DB
+    updateMedication(updatedMedication);
 
-    temp.splice(indexToDel, 1);
-    setMedications(temp);
+    // update locally
+    const updatedMedicationIndex = medications.findIndex(medication => medication._id === updatedMedication._id);
+    const updatedMedications = [...medications];
+    updatedMedications[updatedMedicationIndex] = updatedMedication;
+    setMedications(updatedMedications);
+  };
+
+
+  // const deleteMedication = (id) => {
+  //   const temp = medications.map(s =>s);
+  //   const indexToDel = temp.map(s => s._id).indexOf(id);
+  //   console.log(indexToDel);
+
+  //   temp.splice(indexToDel, 1);
+  //   setMedications(temp);
+  // }
+
+  const removeMedication = idToDelete => {
+    // req to server to delete booking from DB
+    deleteMedication(idToDelete);
+    setMedications(medications.filter(medication => medication._id !== idToDelete));
   }
 
 
@@ -60,7 +80,9 @@ function App() {
       <Routes>
         {/* <Route path="/" element={< Home />} /> */}
         <Route path="/advice" element={< Advice />} />
-        <Route path="/medications" element={<>< MedsForm addMedication={addMedication} />< MedsGrid medications={medications}  removeMedication={removeMedication}/>
+        <Route path="/medications" element={<>< MedsForm addMedication={addMedication} />< MedsGrid medications={medications}  removeMedication={removeMedication}
+          updatingMedication={updatingMedication}
+        />
         </>} />
         {/* <Route path="/results" element={< ReportsList items={items} />} /> */}
         {/* <Route path="/images" element={< DiagnosticList viewImage={viewImage} />} /> */}

@@ -33,6 +33,14 @@
   justify-content: space-evenly;
 }
 
+.active-yes {
+  color: darkgreen;
+}
+
+.active-no {
+  color: darkred;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

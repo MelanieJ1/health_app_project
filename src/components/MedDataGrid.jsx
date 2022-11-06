@@ -1,9 +1,10 @@
 import MedsCard from "./MedDataCard";
 
 
-const MedsGrid = ({medications, removeMedication}) => {
-    const medsList = medications.map((medication) =>{
-        return <MedsCard medication={medication} key={medication._id} removeMedication={removeMedication} />
+const MedsGrid = ({medications, removeMedication, updateBooking}) => {
+    const medsList = medications.map(medication => {
+        return <MedsCard key={medication._id} medication={medication}  
+        removeMedication={removeMedication} updateBooking={updateBooking}/>
     });
     
     return (

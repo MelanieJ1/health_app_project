@@ -21,9 +21,20 @@ export const postMedications = (payload) => {
 export const deleteMedication = (id) => {
   return fetch(baseURL + id, { 
     method: 'DELETE'
-  })
+  })};
 
-}
+export const updateMedication = (medication) => {
+  return fetch(baseURL + medication._id, {
+      method: 'PUT',
+      body: JSON.stringify(medication),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json());
+  }
+
+
 
 
 
