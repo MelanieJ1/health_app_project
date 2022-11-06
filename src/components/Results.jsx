@@ -46,4 +46,4 @@ const Results = ({result}) => {
     );
   }
 
-export default Reports;
+export default Results;
