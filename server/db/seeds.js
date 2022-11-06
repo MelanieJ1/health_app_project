@@ -109,8 +109,10 @@ db.medicalResults.insertMany([
 db.medications.insertMany([
 
     {
-        
-    }
+        "medication": "Omeprazole",
+        "supplement": "Vitamin C",
+        "date": "2017-01-22"
+    },
 
 
 ])

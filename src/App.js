@@ -3,31 +3,52 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import NavBar from './components/NavBar';
 import Advice from "./components/Advice"; 
-import Meds from './components/Meds';
-import HealthDataService from './containers/HealthService';
+import { getMedications } from './containers/HealthService';
+import { deleteMedication } from './containers/HealthService';
+
+
+import ReportsList from './components/ReportsList';
+import ResultsService from './containers/ResultsService';
 import MedsForm from './components/MedsForm';
-// import MedDataCard from './components/MedDataCard';
-// import MedDataGrid from './components/MedDataGrid';
-// import { getMedData } from './components/MedDataService';
+import MedsGrid from './components/MedDataGrid';
+
 
 
 
 
 function App() {
-  const [items, setItems] = useState([]);
+  const [medications, setMedications] = useState([]);
   
 
   useEffect(() => {
-    HealthDataService.getHealthData().then((items) => setItems(items))
-  }, [])
+    getMedications().then((allMedications) => setMedications(allMedications))
+  }, []);
 
+  
 
-
-  const addMedication = (item) => {
-    HealthDataService.addMedication(item).then((newItem) =>
-      setItems([...items, newItem])
-    )
+  const addMedication = (medication) =>{
+    const temp = medications.map(s =>s);
+    temp.push(medication);
+    setMedications(temp);
   }
+
+  const removeMedication = (id) => {
+    const temp = medications.map(s =>s);
+    const indexToDel = temp.map(s => s._id).indexOf(id);
+    console.log(indexToDel);
+
+    temp.splice(indexToDel, 1);
+    setMedications(temp);
+  }
+
+
+
+
+  
+
+
+
+
 
   
 
@@ -39,8 +60,11 @@ function App() {
       <Routes>
         {/* <Route path="/" element={< Home />} /> */}
         <Route path="/advice" element={< Advice />} />
-        <Route path="/medication" element={< Meds addMedication={addMedication} />} />
-        
+        <Route path="/medications" element={<>< MedsForm addMedication={addMedication} />< MedsGrid medications={medications}  removeMedication={removeMedication}/>
+        </>} />
+        {/* <Route path="/results" element={< ReportsList items={items} />} /> */}
+        {/* <Route path="/images" element={< DiagnosticList viewImage={viewImage} />} /> */}
+
 
       </Routes>
     </Router>

@@ -1,21 +1,25 @@
-const MedDataCard = ({medicalData, removeMedicalData}) => {
+import { deleteMedication } from "../containers/HealthService";
 
-    // console.log(sighting);
-    // const handleDelete = () => {
-    //     deleteData(medicalData._id).then(()=>{
-    //         removeMedicalData(sighting._id);
-    //     })
-    // }
-        return (
+
+const MedsCard = ({medication, removeMedication }) => {
+
+    
+    const handleDelete = () => {
+        deleteMedication(medication._id).then(()=>{
+            removeMedication(medication._id);
+        })
+    }
+    return (
         <>
+            <h1>List</h1>
+            <p>Medication: {medication.medication}</p>
+            <p>Supplement: {medication.supplement}</p>
+            <p>Date: {medication.date}</p>
+            <button onClick={handleDelete}> Delete </button>
+            <hr></hr>
 
-            <h1>{MedDataCard.name}</h1>
-            <p>Image: {MedDataCard.img_url}</p>
-            {/* <button onClick={handleDelete}> 🗑 </button> */}
-
-            
         </>
     )
 }
 
-export default MedDataCard;
+export default MedsCard;

@@ -1,16 +1,24 @@
-import MedDataCard from "./MedDataCard";
+import MedsCard from "./MedDataCard";
 
-const MedDataGrid = ({medicalData}) => {
-    const medicalDataList = medicalData.map((medicalData) =>{
-        return <MedDataCard medicalData={medicalData} key={medicalData._id} />
+
+const MedsGrid = ({medications, removeMedication}) => {
+    const medsList = medications.map((medication) =>{
+        return <MedsCard medication={medication} key={medication._id} removeMedication={removeMedication} />
     });
     
     return (
         <>
-            {medicalDataList}
+            {medsList}
         </>
     );
 
 }
 
-export default MedDataGrid;
+export default MedsGrid;
+
+
+
+
+
+
+
