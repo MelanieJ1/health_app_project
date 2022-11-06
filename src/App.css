@@ -41,6 +41,14 @@
   color: darkred;
 }
 
+.activeSupplement-yes {
+  color: darkgreen;
+}
+
+.activeSupplement-no {
+  color: darkred;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

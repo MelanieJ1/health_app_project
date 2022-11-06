@@ -22,10 +22,10 @@ const Supplements = ({supplement, deleteSupplement, updateSupplement }) => {
     return (
         <>
             <h1>List</h1>
-            <h3 className={"active-supplement" + (supplement.active ? "yes" : "no")}>{supplement.supplement}</h3>
+            <h3 className={"activeSupplement-" + (supplement.active ? "yes" : "no")}>{supplement.supplement}</h3>
             <p>Supplement: {supplement.supplement}</p>
             <p>Date: {supplement.date}</p>
-            <button onClick={toggleActive}>{"Active: " + (supplement.active ? "No" : "Yes")}</button>
+            <button onClick={toggleActive}>{"Active: " + (supplement.active ? "Yes" : "No")}</button>
             <br></br>
             <button onClick={handleDeleteSupplement}> <span>❌</span> Delete </button>
             <hr></hr>

@@ -11,13 +11,17 @@ import { getReports } from './containers/ReportsService';
 import ReportsList from '../src/components/ReportsList'
 import ResultsList from './components/ResultsList';
 import DiagnosticList from './components/DiagnosticList';
+import SupplementsList from './components/SupplementsList';
+
 import MedsForm from './components/MedsForm';
 import MedsGrid from './components/MedDataGrid';
 import { addMedication } from "../src/containers/HealthService";
 import MedsList from './components/MedDataGrid';
 import HealthService from './containers/HealthService';
+import SupplementsService from './containers/SupplementsService';
 import { getImages } from '../src/containers/DiagnosticService';
 import { getResults } from '../src/containers/ResultsService';
+// import { getSupplements } from '../src/containers/SupplementsService';
 import SupplementForm from './components/SupplementsForm';
 
 
@@ -49,7 +53,7 @@ function App() {
   }, []);
 
   useEffect(()=>{
-    getSupplements().then(supplements => setSupplements(supplements))
+    SupplementsService.getSupplements().then(supplements => setSupplements(supplements))
   }, []);
 
 
@@ -79,20 +83,47 @@ function App() {
   };
 
 
-  // const deleteMedication = (id) => {
-  //   const temp = medications.map(s =>s);
-  //   const indexToDel = temp.map(s => s._id).indexOf(id);
-  //   console.log(indexToDel);
-
-  //   temp.splice(indexToDel, 1);
-  //   setMedications(temp);
-  // }
 
   const deleteMedication = idToDelete => {
     // req to server to delete booking from DB
     HealthService.deleteMedication(idToDelete);
     setMedications(medications.filter(medication => medication._id !== idToDelete));
   }
+
+
+
+
+
+
+
+
+
+
+  const createSupplement = newSupplement => {
+    SupplementsService.addSupplement(newSupplement)
+      .then(savedSupplement => setSupplements([ ...supplements, savedSupplement ]));
+  };
+
+
+  const updateSupplement = updatedSupplement => {
+    // req to server to update booking in DB
+    SupplementsService.updateSupplement(updatedSupplement);
+
+    // update locally
+    const updatedSupplementIndex = supplements.findIndex(supplement => supplement._id === updatedSupplement._id);
+    const updatedSupplements = [...supplements];
+    updatedSupplements[updatedSupplementIndex] = updatedSupplement;
+    setSupplements(updatedSupplements);
+  };
+
+
+
+  const deleteSupplement = idToDelete => {
+    // req to server to delete booking from DB
+    SupplementsService.deleteSupplement(idToDelete);
+    setSupplements(supplements.filter(supplement => supplement._id !== idToDelete));
+  }
+
 
 
   return (
