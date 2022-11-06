@@ -18,6 +18,7 @@ import MedsList from './components/MedDataGrid';
 import HealthService from './containers/HealthService';
 import { getImages } from '../src/containers/DiagnosticService';
 import { getResults } from '../src/containers/ResultsService';
+import SupplementForm from './components/SupplementsForm';
 
 
 
@@ -25,6 +26,7 @@ import { getResults } from '../src/containers/ResultsService';
 
 function App() {
   const [medications, setMedications] = useState([]);
+  const [supplements, setSupplements] = useState([]);
   const [reports, setReports] = useState([]);
   const [results, setResults] = useState([]);
   const [images, setImages] = useState([]);
@@ -45,6 +47,11 @@ function App() {
   useEffect(()=>{
     getImages().then(images => setImages(images))
   }, []);
+
+  useEffect(()=>{
+    getSupplements().then(supplements => setSupplements(supplements))
+  }, []);
+
 
   
 
@@ -101,7 +108,12 @@ function App() {
         />
         </>}
         />
-        <Route path="/supplements" element={< Advice />} />
+        <Route path="/supplements" element={<>< SupplementForm addSupplement={createSupplement} />< SupplementsList supplements={supplements}
+          updateSupplement={updateSupplement}
+          deleteSupplement={deleteSupplement}
+        />
+        </>}
+         />
         <Route path="/reports" element={< ReportsList reports={reports}/>} />
         <Route path="/results" element={< ResultsList results={results}/>} />
         <Route path="/images" element={< DiagnosticList images={images} />} />
