@@ -9,13 +9,15 @@ import { updateMedication } from './containers/HealthService';
 import Reports from './components/Reports';
 import { getReports } from './containers/ReportsService';
 import ReportsList from '../src/components/ReportsList'
+import ResultsList from './components/ResultsList';
 import DiagnosticList from './components/DiagnosticList';
 import MedsForm from './components/MedsForm';
 import MedsGrid from './components/MedDataGrid';
 import { addMedication } from "../src/containers/HealthService";
 import MedsList from './components/MedDataGrid';
 import HealthService from './containers/HealthService';
-import { getImages } from '../src/containers/DiagnosticService'
+import { getImages } from '../src/containers/DiagnosticService';
+import { getResults } from '../src/containers/ResultsService';
 
 
 
@@ -24,6 +26,7 @@ import { getImages } from '../src/containers/DiagnosticService'
 function App() {
   const [medications, setMedications] = useState([]);
   const [reports, setReports] = useState([]);
+  const [results, setResults] = useState([]);
   const [images, setImages] = useState([]);
   
 
@@ -33,6 +36,10 @@ function App() {
 
   useEffect(()=>{
     getReports().then(reports => setReports(reports))
+  }, []);
+
+  useEffect(()=>{
+    getResults().then(results => setResults(results))
   }, []);
 
   useEffect(()=>{
@@ -96,7 +103,7 @@ function App() {
         />
         <Route path="/supplements" element={< Advice />} />
         <Route path="/reports" element={< ReportsList reports={reports}/>} />
-        
+        <Route path="/results" element={< ResultsList results={results}/>} />
         <Route path="/images" element={< DiagnosticList images={images} />} />
 
 
