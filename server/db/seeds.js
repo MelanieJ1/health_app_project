@@ -152,6 +152,9 @@ db.medicalReports.insertMany([
 
 db.medications.insertMany([
     {
+        medication: "Paracetemol",
+        date: "2022-11-18",
+        active: true
 
     }
     
@@ -160,6 +163,11 @@ db.medications.insertMany([
 db.supplements.insertMany([
 
     {
+
+        supplement: "Vitamin C",
+        date: "2022-11-10",
+        active: true
+
         
     }
 ])

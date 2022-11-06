@@ -27,7 +27,7 @@ const MedsForm = ({addMedication}) => {
   return (
 
 <form onSubmit={handleSubmit}>
-      <h1>Add a booking</h1>
+      <h1>Add Medication</h1>
       <div className="group">
         <label htmlFor="medication">Medication:</label>
         <input 
