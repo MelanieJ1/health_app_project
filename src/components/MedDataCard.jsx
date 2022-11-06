@@ -13,7 +13,6 @@ const MedsCard = ({medication, deleteMedication, updateMedication }) => {
         updateMedication({
           _id: medication._id,
           medication: medication.medication,
-          supplement: medication.supplement,
           date: medication.date,
           active: !medication.active
         });
@@ -27,7 +26,6 @@ const MedsCard = ({medication, deleteMedication, updateMedication }) => {
             <h1>List</h1>
             <h3 className={"active-" + (medication.active ? "yes" : "no")}>{medication.medication}</h3>
             <p>Medication: {medication.medication}</p>
-            <p>Supplement: {medication.supplement}</p>
             <p>Date: {medication.date}</p>
             <button onClick={toggleActive}>{"Active: " + (medication.active ? "Yes" : "No")}</button>
             <br></br>
