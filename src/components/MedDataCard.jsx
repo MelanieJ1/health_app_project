@@ -8,11 +8,6 @@ const MedsCard = ({medication, deleteMedication, updateMedication }) => {
       }
 
     
-    // const handleDelete = () => {
-    //     deleteMedication(medication._id).then(()=>{
-    //         removeMedication(medication._id);
-    //     })
-    // }
 
     const toggleActive = () => {
         updateMedication({
