@@ -1,5 +1,4 @@
-import { updateMedication } from "../containers/HealthService";
-import { updatingMedication} from "../App"
+
 import MedsCard from "./MedDataCard";
 
 
