@@ -2,6 +2,39 @@
   text-align: center;
 }
 
+body{
+  background-image: url("../images/bay_2.JPG");
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 1600px 1600px;
+  margin-bottom: 0%;
+  background-position: center ;
+  margin: 0%;
+  
+}
+
+/* .title {
+
+  position: fixed; 
+  top: -50%; 
+  left: -50%; 
+  width: 200%; 
+  height: 200%;
+}
+
+.title img {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0; 
+  margin: auto; 
+  min-width: 50%;
+  min-height: 50%;
+} */
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,6 +59,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App-title {
+
 }
 
 .navbar{

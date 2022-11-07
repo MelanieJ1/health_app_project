@@ -23,6 +23,7 @@ import { getImages } from '../src/containers/DiagnosticService';
 import { getResults } from '../src/containers/ResultsService';
 // import { getSupplements } from '../src/containers/SupplementsService';
 import SupplementForm from './components/SupplementsForm';
+import Title from './components/Title';
 
 
 
@@ -131,7 +132,7 @@ function App() {
     <Router>
     <NavBar />
       <Routes>
-        {/* <Route path="/" element={< Home />} /> */}
+        <Route path="/" element={< Title />} />
         <Route path="/advice" element={< Advice />} />
         <Route path="/medications" element={<>< MedsForm addMedication={createMedication} />< MedsList medications={medications}
           updateMedication={updateMedication}
