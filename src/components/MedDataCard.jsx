@@ -23,13 +23,28 @@ const MedsCard = ({medication, deleteMedication, updateMedication }) => {
 
     return (
         <>
-            <h1>List</h1>
-            <h3 className={"active-" + (medication.active ? "yes" : "no")}>{medication.medication}</h3>
+        <div className="med-page">
+            <div className="meds">
+          
+            </div>
+            <div className="meds">
+            <h1 className={"active-" + (medication.active ? "yes" : "no")}>{medication.medication}</h1>
+            </div>
+            <div className="meds">
             <p>Date: {medication.date}</p>
+            </div>
+            <div className="meds">
             <button onClick={toggleActive}>{"Active: " + (medication.active ? "Yes" : "No")}</button>
+            </div>
             <br></br>
+            <div className="meds">
             <button onClick={handleDeleteMedication}> <span>❌</span> Delete </button>
+            </div>
             <br></br>
+            <br></br>
+            <br></br>
+
+          </div>
 
         </>
     )

@@ -13,7 +13,7 @@ const ReportsList = ({reports}) => {
   
     return (
       <section id="reports">
-        <h2>Reports</h2>
+        <h2>Medical Reports</h2>
         <div id="reports-wrapper">
           {reportsNodes}
         </div>

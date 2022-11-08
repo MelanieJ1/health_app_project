@@ -12,7 +12,7 @@ const ResultsList = ({results}) => {
   
     return (
       <section id="results">
-        <h2>Reports</h2>
+        <h2>Medical Test Results</h2>
         <div id="results-wrapper">
           {resultsNodes}
         </div>

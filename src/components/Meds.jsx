@@ -7,8 +7,8 @@ import '../App.js';
 const Meds = ({addMedication}) => {
     return (
 
-    <div className="App">
-      <header className="App-header">
+    <div className="Meds">
+      {/* <header className="Meds-header"> */}
       <>  
       
      <div>
@@ -18,7 +18,7 @@ const Meds = ({addMedication}) => {
       
 
         </>
-      </header>
+      {/* </header> */}
     </div>
 
     );

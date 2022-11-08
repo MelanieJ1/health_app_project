@@ -9,8 +9,11 @@ const SupplementsList = ({supplements, updateSupplement, deleteSupplement}) => {
     });
     
     return (
+        
         <>
+        <div id="supplement-page">
             {supplementNodes}
+        </div>
         </>
     );
 

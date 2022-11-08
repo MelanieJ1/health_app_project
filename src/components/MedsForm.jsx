@@ -25,7 +25,7 @@ const MedsForm = ({addMedication}) => {
 
   
   return (
-
+<div className="med-form">
 <form onSubmit={handleSubmit}>
       <h1>Add Medication</h1>
       <div className="group">
@@ -54,17 +54,18 @@ const MedsForm = ({addMedication}) => {
 
       <div className="group">
         <label htmlFor="active">Active:</label>
-        <input 
+        <input
           type="checkbox" 
-          id="active" 
+          class="active" 
           name="active" 
           value={active} 
           onChange={handleActiveChange}
         />
       </div>
 
-      <input type="submit" name="submit" value="Save" />
+      <input className="save-button" type="submit" name="submit" value="Save" />
     </form>
+    </div>
 
       )}
 
