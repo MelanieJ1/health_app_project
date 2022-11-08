@@ -27,7 +27,7 @@ const Supplements = ({supplement, deleteSupplement, updateSupplement }) => {
             <button onClick={toggleActive}>{"Active: " + (supplement.active ? "Yes" : "No")}</button>
             <br></br>
             <button onClick={handleDeleteSupplement}> <span>❌</span> Delete </button>
-            <hr></hr>
+            <br></br>
 
         </>
     )

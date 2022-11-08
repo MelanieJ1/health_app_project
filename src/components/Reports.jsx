@@ -8,8 +8,7 @@ const Reports = ({report}) => {
       <>  
       
     <div>
-      <h1>Reports</h1>
-      <p>{report.title}</p>
+      <h1>{report.title}</h1>
       <p>{report.patient_name}</p>
       <p>{report.report}</p>
     

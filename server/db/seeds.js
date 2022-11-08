@@ -125,7 +125,7 @@ db.medicalReports.insertMany([
     {
         "title": "Liver Ultrasound Report",
         "patient_name": "Jane Smith",
-        "report": "Liver has no fatty deposits.  No unusual growths or lesions.  Gallbladder is free of gallstones.  Scaring is absent.  Liver size is regular and shows no abnormalities."
+        "report": "Liver has no fatty deposits.  No unusual growths or lesions.  Gallbladder is free of gallstones.  Scaring is absent.  Liver size is regular and shows no abnormalities.",
 
     },
 
@@ -144,7 +144,7 @@ db.medicalReports.insertMany([
     {
         "title": "MRI Brain Scan Report",
         "patient_name": "Jane Smith",
-        "report":"SEQUENCES: Sagittal FLAIR and coronal T2-weighted images are supplemented by axial T1, T2, and FLAIR images. There is diffuse dilatation of sulci and ventricles. There has been extensive tissue loss in the right cerebral hemisphere due to an old insult,presumably an ischemic event. This primarily involves the right temporal/occipital region and is associated with obvious ex vacuo prominence of the right lateral ventricle. There is wallerian degeneration of the corticospinal tracts/cerebral peduncle",
+        "report":"SEQUENCES: Sagittal FLAIR and coronal T2-weighted images are supplemented by axial T1, T2, and FLAIR images. There is diffuse dilatation of sulci and ventricles. There has been extensive tissue loss in the right cerebral hemisphere, presumably an ischemic event. This primarily involves the right temporal/occipital region and is associated with obvious ex vacuo prominence of the right lateral ventricle. There is wallerian degeneration of the corticospinal tracts/cerebral peduncle",
     },
 
 
