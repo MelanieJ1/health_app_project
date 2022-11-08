@@ -7,8 +7,8 @@ const Images = ({image}) => {
       <>  
       
     <div>
-      <h1>Images</h1>
-      <p>{image.title}</p>
+      {/* <h1>Images</h1> */}
+      <h1>{image.title}</h1>
       <p>{image.patient_name}</p>
       <p><img src={image.img_url} alt={'Diagnostic Image'} className='image' /></p>
     

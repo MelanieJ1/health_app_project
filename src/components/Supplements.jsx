@@ -23,7 +23,6 @@ const Supplements = ({supplement, deleteSupplement, updateSupplement }) => {
         <>
             <h1>List</h1>
             <h3 className={"activeSupplement-" + (supplement.active ? "yes" : "no")}>{supplement.supplement}</h3>
-            <p>Supplement: {supplement.supplement}</p>
             <p>Date: {supplement.date}</p>
             <button onClick={toggleActive}>{"Active: " + (supplement.active ? "Yes" : "No")}</button>
             <br></br>

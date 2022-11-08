@@ -25,6 +25,7 @@ db.medicalImages.insertMany([
 
     {
         "title": "Ultrasound - Spleen",
+        "patient_name": "Jane Smith",
         "img_url": "https://openi.nlm.nih.gov/imgs/512/268/5034021/PMC5034021_JoU-2016-0027-g002.png?keywords="
     },
 
@@ -124,26 +125,26 @@ db.medicalReports.insertMany([
     {
         "title": "Liver Ultrasound Report",
         "patient_name": "Jane Smith",
-        "report": "Liver size is regular and shows no abnormalities."
+        "report": "Liver has no fatty deposits.  No unusual growths or lesions.  Gallbladder is free of gallstones.  Scaring is absent.  Liver size is regular and shows no abnormalities."
 
     },
 
     {
         "title": "Spleen Utrasound Report",
         "patient_name": "Jane Smith",
-        "report":"",
+        "report":"Normal (not splenomegaly): the maximum length is less than 11 cm",
     },
 
     {
         "title": "Hand X-ray Report",
         "patient_name": "Jane Smith",
-        "report":"",
+        "report":"Erosion and demineralisation of bone indicating polyarthritis",
     },
 
     {
         "title": "MRI Brain Scan Report",
         "patient_name": "Jane Smith",
-        "report":"",
+        "report":"SEQUENCES: Sagittal FLAIR and coronal T2-weighted images are supplemented by axial T1, T2, and FLAIR images. There is diffuse dilatation of sulci and ventricles. There has been extensive tissue loss in the right cerebral hemisphere due to an old insult,presumably an ischemic event. This primarily involves the right temporal/occipital region and is associated with obvious ex vacuo prominence of the right lateral ventricle. There is wallerian degeneration of the corticospinal tracts/cerebral peduncle",
     },
 
 
