@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 const Title = () => {
   return (
     <>
-    <h1>Health Data App</h1>
+    <div id="title-page">
+    <p>Health Data App</p>
+    </div>
   </>
 
 

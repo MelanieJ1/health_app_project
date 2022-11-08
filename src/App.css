@@ -14,25 +14,42 @@ body{
   
 }
 
-/* .title {
+#title-page{
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+  font-size:400%;
+  font-style: italic;
+  
 
-  position: fixed; 
-  top: -50%; 
-  left: -50%; 
-  width: 200%; 
-  height: 200%;
 }
 
-.title img {
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  right: 0; 
-  bottom: 0; 
-  margin: auto; 
-  min-width: 50%;
-  min-height: 50%;
-} */
+a:link {
+  text-decoration-line: none;
+  text-decoration: none;
+ 
+}
+a:visited {
+  text-decoration-line: none;
+}
+a:hover {
+  font-size: 150%
+
+}
+
+ {
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+  font-size:400%;
+  font-style: italic;
+  
+
+}
+
+
+
 
 
 .App-logo {
@@ -61,13 +78,12 @@ body{
   color: #61dafb;
 }
 
-.App-title {
 
-}
 
 .navbar{
   display: flex;
   justify-content: space-evenly;
+  font-size: 150%;
 }
 
 .active-yes {
