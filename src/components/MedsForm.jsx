@@ -62,8 +62,11 @@ const MedsForm = ({addMedication}) => {
           onChange={handleActiveChange}
         />
       </div>
+      <br></br>
 
       <input className="save-button" type="submit" name="submit" value="Save" />
+      <br></br>
+      <br></br>
     </form>
     </div>
 

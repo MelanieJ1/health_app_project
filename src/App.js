@@ -134,7 +134,7 @@ function App() {
       <Routes>
         <Route path="/" element={< Title />} />
         <Route path="/advice" element={< Advice />} />
-        <Route path="/medications" element={<>< MedsForm addMedication={createMedication} />< MedsList medications={medications}
+        <Route path="/medications" element={<>< MedsForm addMedication={createMedication} /><br></br>< MedsList medications={medications}
           updateMedication={updateMedication}
           deleteMedication={deleteMedication}
         />

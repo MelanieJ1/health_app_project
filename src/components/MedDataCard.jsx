@@ -25,26 +25,31 @@ const MedsCard = ({medication, deleteMedication, updateMedication }) => {
         <>
         <div className="med-page">
             <div className="meds">
-          
-            </div>
-            <div className="meds">
-            <h1 className={"active-" + (medication.active ? "yes" : "no")}>{medication.medication}</h1>
-            </div>
-            <div className="meds">
-            <p>Date: {medication.date}</p>
-            </div>
-            <div className="meds">
-            <button onClick={toggleActive}>{"Active: " + (medication.active ? "Yes" : "No")}</button>
+            <ul className="meds-list">
+            {/* </div> */}
+            {/* <div className="meds"> */}
+            <li><h1 className={"active-" + (medication.active ? "yes" : "no")}>{medication.medication}</h1></li>
+            {/* </div> */}
+            {/* <div className="meds"> */}
+            <li><p>Date: {medication.date}</p></li>
+            {/* <br></br> */}
+            {/* </div> */}
+            {/* <div className="meds"> */}
+            <li><button onClick={toggleActive}>{"Active: " + (medication.active ? "Yes" : "No")}</button></li>
+            {/* </div> */}
+            <br></br>
+            {/* <div className="meds"> */}
+            <li><button onClick={handleDeleteMedication}> <span>❌</span> Delete </button></li>
+            <br></br>
+            </ul>
             </div>
             <br></br>
-            <div className="meds">
-            <button onClick={handleDeleteMedication}> <span>❌</span> Delete </button>
-            </div>
             <br></br>
             <br></br>
             <br></br>
 
           </div>
+          <br></br>
 
         </>
     )
