@@ -12,15 +12,15 @@ const Advice = () => {
     return (
 
     <div className="App">
-      <header className="App-header">
+      <header className="health-header">
       <>  
       
-    <div>
+    <div className='menu'>
       <h1>Healthy Eating</h1>
      <EatHealthyContainer/>
     </div>
         </>
-      </header>
+     </header>
     </div>
 
     );
