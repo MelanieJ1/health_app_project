@@ -30,7 +30,7 @@ const SupplementForm = ({addSupplement}) => {
 
 <form onSubmit={handleSupplementSubmit}>
       <h1>Supplements</h1>
-      <div className="supplements">
+      <div className="supplements-form">
         <label htmlFor="supplement">Supplement:</label>
         <input 
           type="text" 
@@ -43,7 +43,7 @@ const SupplementForm = ({addSupplement}) => {
       </div>
 
 
-      <div className="supplements">
+      <div className="supplements-form">
         <label htmlFor="date">Date:</label>
         <input 
           type="date" 
@@ -55,7 +55,7 @@ const SupplementForm = ({addSupplement}) => {
         />
       </div>
 
-      <div className="supplements">
+      <div className="supplements-form">
         <label htmlFor="active">Active:</label>
         <input 
           type="checkbox" 

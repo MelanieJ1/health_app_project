@@ -70,7 +70,7 @@ body{
 
 .save-button {
   border-radius: 60%;
-  font-size: 30px;
+  font-size: 20px;
   background-color: blue;
   cursor: pointer;
 }
@@ -111,11 +111,14 @@ body{
 
 .meds{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 500px;
+  /* justify-content:center; */
+  /* align-items: center; */
+  text-align: left;
+  width: 200px;
   background-color: rgba(61, 78, 162, 0.84);
   border: 2px black groove;
+  padding-left: 10%;
+  padding-right:12%;
   
   
 }
@@ -130,6 +133,29 @@ body{
   justify-content: center;
 
 
+}
+
+.supplements {
+  display: flex;
+  /* justify-content:center; */
+  /* align-items: center; */
+  text-align: left;
+  width: 200px;
+  background-color: rgba(61, 78, 162, 0.84);
+  border: 2px black groove;
+  padding-left: 10%;
+  padding-right:12%;
+
+}
+
+.supp-list {
+  list-style:none;
+
+}
+
+.supp-page {
+  display: flex;
+  justify-content: center;
 }
 
 .test-results{
@@ -188,7 +214,8 @@ a:hover {
   /* background-color: #395da7; */
   background-image: url("/Users/melaniej/codeclan_work/project_app/health_data_app/images/healthy_food_1.png");
   background-repeat: no-repeat;
-  background-size: 1400px 1000px;
+  background-size: 1600px 1100px;
+  background-attachment: fixed;
   /* opacity: 0.9; */
   min-height: 100vh;
   display: flex;

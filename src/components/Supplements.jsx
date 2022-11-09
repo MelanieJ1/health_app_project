@@ -21,13 +21,24 @@ const Supplements = ({supplement, deleteSupplement, updateSupplement }) => {
 
     return (
         <>
-            <h1>List</h1>
-            <h3 className={"activeSupplement-" + (supplement.active ? "yes" : "no")}>{supplement.supplement}</h3>
-            <p>Date: {supplement.date}</p>
-            <button onClick={toggleActive}>{"Active: " + (supplement.active ? "Yes" : "No")}</button>
+        <div className="supp-page">
+          <div className="supplements">
+          <ul className="supp-list">
+            <li><h3 className={"activeSupplement-" + (supplement.active ? "yes" : "no")}>{supplement.supplement}</h3></li>
+            <li><p>Date: {supplement.date}</p></li>
+            <li><button onClick={toggleActive}>{"Active: " + (supplement.active ? "Yes" : "No")}</button></li>
             <br></br>
-            <button onClick={handleDeleteSupplement}> <span>❌</span> Delete </button>
+            <li><button onClick={handleDeleteSupplement}> <span>❌</span> Delete </button></li>
             <br></br>
+          </ul>
+          </div>
+          <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+
+        </div>
+        <br></br>
 
         </>
     )
