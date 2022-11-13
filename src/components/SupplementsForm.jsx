@@ -28,8 +28,8 @@ const SupplementForm = ({addSupplement}) => {
   
   return (
 
-<form onSubmit={handleSupplementSubmit}>
-      <h1>Supplements</h1>
+<form className="supp-form" onSubmit={handleSupplementSubmit}>
+      {/* <div className="supp-header"><p>Add Supplement</p> </div> */}
       <div className="supplements-form">
         <label htmlFor="supplement">Supplement:</label>
         <input 
@@ -59,14 +59,15 @@ const SupplementForm = ({addSupplement}) => {
         <label htmlFor="active">Active:</label>
         <input 
           type="checkbox" 
-          id="active" 
+          class="active" 
           name="active" 
           value={active} 
           onChange={handleActiveChange}
         />
       </div>
 
-      <input type="submit" name="submit" value="Save" />
+      <input className="supplement-button" type="submit" name="submit" value="Save" />
+
     </form>
 
       )}

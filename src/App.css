@@ -34,14 +34,24 @@ body{
   margin-top: 15%;
   font-size:400%;
   font-style: italic;
+  font-weight: bolder;
+  animation: color-change 5s infinite;
   
 
+}
+
+@keyframes color-change {
+  0% { color: purple }
+  25% {color: #2196b6;}
+  50% { color: rgb(54, 169, 169); }
+  75% {color: blue;}
+  100% { color: rgb(86, 42, 199); }
 }
 
 #supplement-page {
   background-image: url("../images/sea_2.JPG");
   background-repeat: no-repeat;
-  background-size: 1800px 1300px;
+  background-size: 1800px 1200px;
   margin-bottom: 0%;
   background-position: center;
   margin: 0%;
@@ -109,6 +119,19 @@ body{
   color: white;
 }
 
+.delete-button {
+  transition-duration: 0.4s;
+  background-color: #EFEFEF;
+  cursor: pointer;
+
+}
+
+.delete-button:hover {
+  /* background-color: #3a7c3c; Green */
+  background-color: rgb(15, 109, 109);
+  color: white;
+
+}
 .meds{
   display: flex;
   /* justify-content:center; */
@@ -156,6 +179,39 @@ body{
 .supp-page {
   display: flex;
   justify-content: center;
+}
+
+/* .supp-header {
+  display: flex;
+  justify-content: left;
+
+  
+} */
+
+.supp-form {
+  font-size: 90%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.supplements-form {
+  font-size: 20px;
+}
+
+.supplement-button {
+  border-radius: 60%;
+  font-size: 20px;
+  background-color: blue;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.supplement-button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+
+
 }
 
 .test-results{
@@ -244,7 +300,8 @@ a:hover {
 }
 
 .active-yes {
-  color: rgba(14, 31, 225, 0.965);
+  /* color: rgba(29, 20, 75, 0.965); */
+  color: #bbf5bd;
 }
 
 .active-no {
@@ -252,11 +309,13 @@ a:hover {
 }
 
 .activeSupplement-yes {
-  color: darkgreen;
+  /* color: rgba(81, 155, 81, 0.804); */
+  color: #bbf5bd;
 }
 
 .activeSupplement-no {
-  color: rgb(121, 22, 22);
+  /* color: rgb(121, 22, 22); */
+  color: rgb(214, 51, 84);
 }
 
 @keyframes App-logo-spin {

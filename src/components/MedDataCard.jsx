@@ -39,7 +39,7 @@ const MedsCard = ({medication, deleteMedication, updateMedication }) => {
             {/* </div> */}
             <br></br>
             {/* <div className="meds"> */}
-            <li><button onClick={handleDeleteMedication}> <span>❌</span> Delete </button></li>
+            <li><button className="delete-button" onClick={handleDeleteMedication}> <span>❌</span> Delete </button></li>
             <br></br>
             </ul>
             </div>

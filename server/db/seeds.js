@@ -122,6 +122,8 @@ db.medicalResults.insertMany([
 
 db.medicalReports.insertMany([
 
+
+
     {
         "title": "Liver Ultrasound Report",
         "patient_name": "Jane Smith",
@@ -153,7 +155,7 @@ db.medicalReports.insertMany([
 
 db.medications.insertMany([
     {
-        medication: "Paracetemol",
+        medication: "Omeprazole",
         date: "2022-11-18",
         active: true
 
@@ -170,7 +172,21 @@ db.supplements.insertMany([
         active: true
 
         
-    }
+    },
+
+    {
+        supplement: "Vitamin B Complex",
+        date: "2022-4-10",
+        active: true
+    },
+
+    {
+        supplement: "Vitamin D",
+        date: "2022-8-1",
+        active: true
+    },
+
+    
 ])
 
 

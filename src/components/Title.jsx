@@ -10,7 +10,7 @@ const Title = () => {
     <div id="title">
 
     <div id="title-logo">
-    <p>Health Data App</p>
+    <p>My Health Data</p>
     </div>
     </div>
   </>

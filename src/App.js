@@ -140,7 +140,7 @@ function App() {
         />
         </>}
         />
-        <Route path="/supplements" element={<>< SupplementForm addSupplement={createSupplement} />< SupplementsList supplements={supplements}
+        <Route path="/supplements" element={<>< SupplementForm addSupplement={createSupplement} /><br></br>< SupplementsList supplements={supplements}
           updateSupplement={updateSupplement}
           deleteSupplement={deleteSupplement}
         />
